@@ -1,0 +1,52 @@
+<%-include('../partials/head.ejs')%>
+<%-include('../partials/nav.ejs')%>
+<section>
+    <div class="container-fluid landing-section" >
+        <div class="row p-5">
+            <div class="col-12 col-sm-6 mt-4">
+                <h1 class="display-4 text-capitalize">Learn <%=subTitle%>!</h1>
+                <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum quaerat tenetur amet quo mollitia deserunt quibusdam, omnis perspiciatis in illum?</p>
+                <div class="d-grid gap-2 d-md-block py-4">
+                    <button class="btn btn-primary  px-4 me-3 py-3" type="button">Get Started</button>
+                    <button class="btn btn-outline-primary px-4 py-3" type="button">Learn More</button>
+                  </div>
+            </div>
+            <div class="col-6 px-5">
+                <img src="/assets/undraw_programming_re_kg9v.svg" alt="" srcset="" class="img-fluid w-75 ms-5">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container mt-5 mb-2">
+        <div class="row">
+          <div class="info-section d-flex justify-content-center">
+            <h1 class="text-primary border-bottom text-capitalize"><%=subTitle%> Courses</h1>
+          </div>
+    </div>
+    </div>
+</section>
+
+<section>
+    <div class="container mb-5">
+        <div class="row">
+        <% if(fetchedCourse.length>0){ %>
+            <% fetchedCourse.forEach((element)=>{%>
+            <div class="col-sm-6 g-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><%-element.title%></h5>
+                  <p class="card-text"><%-element.intro%></p>
+                  <a href="/learn/<%-element.slug%>" class="btn btn-primary">Start Learning</a>
+                </div>
+              </div>
+            </div>
+            <%})%>
+        <%} else { %>
+            <h1>no data received</h1>
+        <%} %>
+        </div>
+    </div>
+</section>
+<%-include('../partials/footer.ejs')%>

@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400 !important;
+}
+.navbar-brand{
+    font-weight: 500;
+    padding-bottom: .6rem;
+}
+.logoFavicon{
+    font-size: 1.7rem;
+    padding-top: 10px;
+}
+.btn{
+    border-radius: 30px !important;
+}
+.landing-section{
+  background: #e3f2fd;
+}

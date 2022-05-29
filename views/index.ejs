@@ -1,0 +1,57 @@
+<%-include('../partials/head.ejs')%>
+<%-include('../partials/nav.ejs')%>
+<section>
+    <div class="container-fluid landing-section" >
+        <div class="row p-5">
+            <div class="col-12 col-sm-6 mt-4">
+                <h1 class="display-4">Welcome to Coder's !</h1>
+                <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum quaerat tenetur amet quo mollitia deserunt quibusdam, omnis perspiciatis in illum?</p>
+                <div class="d-grid gap-2 d-md-block py-4">
+                    <button class="btn btn-primary  px-4 me-3 py-3" type="button">Get Started</button>
+                    <button class="btn btn-outline-primary px-4 py-3" type="button">Learn More</button>
+                  </div>
+            </div>
+            <div class="col-6 px-5">
+                <img src="/assets/undraw_programming_re_kg9v.svg" alt="" srcset="" class="img-fluid w-75 ms-5">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container my-5">
+        <div class="row">
+          <div class="info-section d-flex justify-content-center">
+            <h1 class="text-primary border-bottom">Our Courses</h1>
+          </div>
+          <div class="course-section my-5">
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+          <% if(availCourses.length>0){ %>
+            <% availCourses.forEach((e)=> {%>
+                <div class="col">
+                  <div class="card h-100">
+                    <img src="<%- e.img %>" class="card-img-top" alt="">
+                    <div class="card-body">
+                     <a href="<%- e.slug %>"><h5 class="card-title"><%- e.title %></h5></a>
+                      <p class="card-text"><%- e.intro %></p>
+                     <a href="<%- e.slug %>"><button class="btn btn-primary">Start Learning</button></a>
+                    </div>
+                  </div>
+                </div>
+            <% }) %>
+            <% } else{ %> 
+            </div>
+            <div class="alert alert-danger d-flex align-items-center" role="alert">
+              <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+              <div>
+               No courses available at this moment..
+              </div>
+            </div>
+            <% } %>
+          </div>
+          
+        </div>
+    </div>
+</section>
+<%-include('../partials/footer.ejs')%>

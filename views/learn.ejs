@@ -1,0 +1,54 @@
+<%-include('../partials/head.ejs')%>
+<%-include('../partials/nav.ejs')%>
+<section>
+    <div class="container-fluid landing-section" >
+        <div class="row p-5">
+            <div class="col-12 col-sm-6 mt-4">
+                <h1 class="display-4 text-capitalize">Learn <%=subTitle%>!</h1>
+                <p class="lead">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum quaerat tenetur amet quo mollitia deserunt quibusdam, omnis perspiciatis in illum?</p>
+                <div class="d-grid gap-2 d-md-block py-4">
+                    <button class="btn btn-primary  px-4 me-3 py-3" type="button">Get Started</button>
+                    <button class="btn btn-outline-primary px-4 py-3" type="button">Learn More</button>
+                  </div>
+            </div>
+            <div class="col-6 px-5">
+                <img src="/assets/undraw_programming_re_kg9v.svg" alt="" srcset="" class="img-fluid w-75 ms-5">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container mt-5 mb-2">
+        <div class="row">
+          <div class="info-section d-flex justify-content-center">
+            <h1 class="text-primary border-bottom text-capitalize"><%=subTitle%> Courses</h1>
+          </div>
+    </div>
+    </div>
+</section>
+
+<section>
+    <div class="container my-4">
+        <div class="row d-flex justify-content-center">
+            <div class="col-12 col-md-10">
+                <ol class="list-group list-group-numbered">
+                   <% if(threads.length>0){ %> 
+                        <% threads.forEach((data)=>{ %>
+                    <li class="list-group-item d-flex justify-content-between align-items-start my-1">
+                      <div class="ms-2 me-auto">
+                        <div class="fw-bold h5"><a href="/posts/<%=data.slug%>"><%=data.title%></a></div>
+                       <%=data.description%>
+                      </div>
+                    </li>
+                    <%})%>
+                    <% }else{  %>
+                    <h1>Not found</h1>
+                    <%}%>
+                  </ol>
+                  
+            </div>
+        </div>
+    </div>
+</section>
+<%-include('../partials/footer.ejs')%>
